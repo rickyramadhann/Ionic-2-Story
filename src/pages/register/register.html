@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+  <div class="login-box">
+    
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-avatar>
+            <img src="../assets/images/pbackground.jpg"/>
+          </ion-avatar>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="frmregister.username" placeholder="username" name="username"  required></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input type="email" [(ngModel)]="frmregister.email" placeholder="email" name="email"  required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="frmregister.password" placeholder="password" name="username"  required></ion-input>
+          </ion-item>
+          
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col class="signup-col">
+        <button ion-button class="submit-btn" full (click)="Reg()">Register</button>
+      </ion-col>
+    </ion-row>
+    
+  </div>
+</ion-content>

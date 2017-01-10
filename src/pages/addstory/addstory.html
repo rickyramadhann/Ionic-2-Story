@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>Addstory</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="uploadSemua()">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-item>
+		<ion-label stacked>Judul</ion-label>
+		<ion-input [(ngModel)]="kisah.judul" type="text" placeholder="Judul kisah anda"></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label stacked>Isi Kisah</ion-label>
+		<ion-input [(ngModel)]="kisah.isi" type="text" placeholder="Isi kisah anda"></ion-input>
+	</ion-item>
+	<ion-fab right bottom>
+    <button ion-fab color="danger"><ion-icon name="camera"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="takePhoto()"><ion-icon name="camera"></ion-icon></button>
+      <button ion-fab (click)="takeGallery()"><ion-icon name="image"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+	<img [src]="gambarku" *ngIf="gambarku" style="width:100%; height: 250px" />
+	
+</ion-content>

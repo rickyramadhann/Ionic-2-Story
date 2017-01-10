@@ -1,0 +1,81 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
+-->
+
+<style media="screen">
+  .plainText {
+    text-decoration: none;
+}
+</style>
+
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="editProfil()">
+      <ion-icon name="create"></ion-icon>
+    </button>
+</ion-buttons>
+<ion-title>Profil</ion-title>
+
+</ion-navbar>
+</ion-header>
+<ion-content class="home">
+    <ion-avatar>
+        <img src="../assets/images/pbackground.jpg"/>
+    </ion-avatar>
+
+    <ion-card>
+        <ion-card-header>
+            Contact Detail
+        </ion-card-header>
+        <ion-card-content>
+            <!-- Hello World -->
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <ion-icon ios="ios-contact" md="md-contact" item-left></ion-icon>
+                <h3 class="plainText" >{{data.username}}</h3>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="mail" item-left></ion-icon>
+                <h3 class="plainText">{{data.email}}</h3>
+            </ion-item>
+
+            <ion-item>
+               <ion-icon ios="ios-call" md="md-call" item-left></ion-icon>
+               <h3 class="plainText">{{data.email}}</h3>
+           </ion-item>
+           
+
+
+       </ion-list>
+   </ion-card>
+
+
+</ion-content>

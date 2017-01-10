@@ -1,0 +1,33 @@
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="http://restlesspilgrim.net/blog/wp-content/uploads/2011/06/happy-300x200.jpg"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" [(ngModel)]="frmLogin.username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="frmLogin.password"></ion-input>
+          </ion-item>
+          <ion-item padding>
+            <button ion-button block primary (click)="doLogin()">Login</button>
+          </ion-item>
+          <ion-item>
+            <button ion-button block primary (click)="createAccount()">Register</button>
+          </ion-item> 
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    
+  </div>
+</ion-content>

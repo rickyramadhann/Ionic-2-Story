@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-navbar color="danger">
+		<ion-title>Edit Profil</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only color="royal" (click)="saveProfil" >
+				Update Profil
+			  <ion-icon name="send"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-item>
+		<ion-label stacked>Name</ion-label>
+		<ion-input [(ngModel)]="profil.nama" type="text" placeholder="Nama anda"></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label stacked>Email</ion-label>
+		<ion-input [(ngModel)]="profil.email" type="email" placeholder="Email anda"></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label stacked>No Hp</ion-label>
+		<ion-input [(ngModel)]="profil.hp" type="number" placeholder="No Hp anda"></ion-input>
+	</ion-item>
+
+
+	<ion-fab right bottom>
+		<button ion-fab color="danger"><ion-icon name="camera"></ion-icon></button>
+		<ion-fab-list side="left">
+			<button ion-fab (click)="takePhoto()"><ion-icon name="camera"></ion-icon></button>
+			<button ion-fab (click)="takeGallery()"><ion-icon name="image"></ion-icon></button>
+		</ion-fab-list>
+	</ion-fab>
+	<img [src]="gambarku" *ngIf="gambarku" />
+	
+</ion-content>

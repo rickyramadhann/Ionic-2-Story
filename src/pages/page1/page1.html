@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Beranda</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="Logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let kisah of Kisah | async">
+
+    <img [src]="kisah.image"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{kisah.judul}}
+      </ion-card-title>
+      <ion-item>
+        <p>{{kisah.created | date : "HH:mm"}}</p>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-left>
+        <button ion-button clear small color="danger" icon-left (click)="detailStory(kisah)">
+          <ion-icon name='star'></ion-icon>
+          View Detail
+        </button>
+      </ion-col>
+
+      <ion-col text-right>
+        <button ion-button clear small (click)="deletekisah(kisah.$key)" color="danger" icon-left>
+          <ion-icon name='trash'></ion-icon>
+          Hapus
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="createStory()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
